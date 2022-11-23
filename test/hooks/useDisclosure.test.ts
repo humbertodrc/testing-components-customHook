@@ -10,6 +10,9 @@ describe("Pruebas en useDisclosure.ts", () => {
 		// Act is render as default
 		// Assert
 		expect(result.current.isOpen).toBe(false);
+		expect(typeof result.current.close).toBe('function')
+    expect(typeof result.current.open).toBe('function')
+    expect(typeof result.current.toggle).toBe('function')
 	});
 
 	test("Cuando se llama a open, isOpen es true", () => {
@@ -37,11 +40,21 @@ describe("Pruebas en useDisclosure.ts", () => {
 	test("Cuando se llama a toggle, isOpen cambia de valor", () => {
 		// Arrange
 		const {result} = renderHook(() => useDisclosure());
+
 		// Act
 		act(() => {
 			result.current.toggle();
 		});
+
 		// Assert
-		expect(result.current.isOpen).toBe(true);
+		expect(result.current.isOpen).toBeTruthy();
+
+		// Act
+		act(() => {
+			result.current.toggle();
+		});
+
+		// Assert
+		expect(result.current.isOpen).toBeFalsy();
 	});
 });
