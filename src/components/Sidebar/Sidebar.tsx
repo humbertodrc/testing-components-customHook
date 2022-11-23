@@ -1,14 +1,14 @@
 import React from 'react';
 import './styles/Sidebar.css';
 export interface SidebarInterface {
-	visible: boolean;
+	visible: Boolean;
 	close: () => void;
 }
 
 const Sidebar : React.FC<SidebarInterface> = ({ visible, close }) => {
 	return  <>
 	{visible && (
-		<div className="sidebar" id="sidebar">
+		<div className="sidebar" data-testid="sidebar">
 			<div className="menu">
 				<span className="close" onClick={close}>
 					X

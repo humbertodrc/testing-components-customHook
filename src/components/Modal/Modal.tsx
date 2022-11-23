@@ -1,6 +1,6 @@
 import React from 'react';
 export interface ModalInterface {
-	visible: boolean;
+	visible: Boolean;
 	close: () => void;
 }
 
