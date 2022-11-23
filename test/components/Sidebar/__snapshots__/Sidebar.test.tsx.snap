@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en <Sidebar /> Debe de mostrarse correctamente 1`] = `<div />`;

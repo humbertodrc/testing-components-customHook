@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function useDisclosure() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<Boolean>(false);
 
   const open = () => {
     if (!isOpen) {
