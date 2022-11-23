@@ -10,39 +10,38 @@ describe("Pruebas en useDisclosure.ts", () => {
 		// Act is render as default
 		// Assert
 		expect(result.current.isOpen).toBe(false);
-  });
-  
-  test("Cuando se llama a open, isOpen es true", () => {
-    // Arrange
-    const { result } = renderHook(() => useDisclosure());
-    // Act
-    act(() => {
-      result.current.open();
-    });
-    // Assert
-    expect(result.current.isOpen).toBe(true);
-  });
+	});
 
-  test("Cuando se llama a close, isOpen es false", () => {
-    // Arrange
-    const { result } = renderHook(() => useDisclosure());
-    // Act
-    act(() => {
-      result.current.close();
-    });
-    // Assert
-    expect(result.current.isOpen).toBe(false);
-  });
+	test("Cuando se llama a open, isOpen es true", () => {
+		// Arrange
+		const {result} = renderHook(() => useDisclosure());
+		// Act
+		act(() => {
+			result.current.open();
+		});
+		// Assert
+		expect(result.current.isOpen).toBe(true);
+	});
 
-  test("Cuando se llama a toggle, isOpen cambia de valor", () => {
-    // Arrange
-    const { result } = renderHook(() => useDisclosure());
-    // Act
-    act(() => {
-      result.current.toggle();
-    });
-    // Assert
-    expect(result.current.isOpen).toBe(true);
-  });
+	test("Cuando se llama a close, isOpen es false", () => {
+		// Arrange
+		const {result} = renderHook(() => useDisclosure());
+		// Act
+		act(() => {
+			result.current.close();
+		});
+		// Assert
+		expect(result.current.isOpen).toBe(false);
+	});
 
+	test("Cuando se llama a toggle, isOpen cambia de valor", () => {
+		// Arrange
+		const {result} = renderHook(() => useDisclosure());
+		// Act
+		act(() => {
+			result.current.toggle();
+		});
+		// Assert
+		expect(result.current.isOpen).toBe(true);
+	});
 });
