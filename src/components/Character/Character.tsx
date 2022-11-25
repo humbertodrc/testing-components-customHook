@@ -5,7 +5,7 @@ interface CharacterProps {
 	status: string;
 }
 
-interface Character {
+export interface CharacterI {
 	id: number;
 	image: string;
 	name: string;
@@ -21,7 +21,7 @@ const Character = ({status}: CharacterProps) => {
 		<section>
 			{isLoading && <p>Loading...</p>}
 			{error && <p>En estos momentos no podemos procesar su solicitud</p>}
-			{character.map((data: Character) => {
+			{character.map((data: CharacterI) => {
 				return (
 					<article key={data.id} className="character">
 						<img src={data.image} />
